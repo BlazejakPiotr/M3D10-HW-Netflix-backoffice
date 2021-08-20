@@ -47,7 +47,7 @@ window.onload = async () => {
     document.getElementById("description").value = movieDetails.description;
     document.getElementById("img").value = movieDetails.imageUrl;
     let form = document.getElementsByTagName("form")[1];
-    form.setAttribute("onsubmit", "response");
+    form.setAttribute("onsubmit", "");
   } else {
     document.getElementById("subtitle").innerText = "Add new movie";
   }
