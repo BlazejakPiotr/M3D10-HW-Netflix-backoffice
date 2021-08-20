@@ -74,6 +74,10 @@
       .footer-icons {
         margin-right: 1rem;
       }
+      .list-group-item {
+        background-color: inherit;
+        border: 1px solid rgb(255 255 255 / 20%);
+      }
     </style>
   </head>
   <body>
@@ -212,37 +216,39 @@
         <div class="col"><h4 class="page-title">Movies datebase</h4></div>
       </div>
       <div class="row mt-2">
-        <div class="col pr-5">
-          <form>
+        <div class="col-6 pr-5">
+          <form onsubmit="addMovie(event)">
             <div class="form-group">
-              <label for="exampleFormControlSelect1">Select genere:</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <label for="genere">Select genere:</label>
+              <select class="form-control" id="genere">
                 <option>Comedy</option>
                 <option>Sci-Fi</option>
                 <option>Action</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Film name:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="exampleFormControlInput1"
-              />
+              <label for="name">Film name:</label>
+              <input type="text" class="form-control" id="name" />
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Film description:</label>
+              <label for="description">Film description:</label>
               <textarea
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="description"
                 rows="3"
               ></textarea>
             </div>
-            <button type="button" class="btn btn-light">Add film</button>
+            <div class="form-group">
+              <label for="img">Image URL:</label>
+              <input type="text" class="form-control" id="img" />
+            </div>
+            <button type="submit" class="btn btn-light">Add film</button>
           </form>
         </div>
-        <div class="col">mov</div>
+        <div class="col-6 pr-5 movies-list">
+          <ul id="list" class="list-group list-group-flush"></ul>
+        </div>
       </div>
     </div>
 
@@ -347,6 +353,10 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/4090a32c63.js"
       crossorigin="anonymous"
     ></script>
   </body>
